@@ -8,9 +8,9 @@ already made, mitred or butted at free corners.
 ![Status](https://img.shields.io/badge/status-0.4%20experimental-orange)
 ![Licence](https://img.shields.io/badge/licence-MIT%20OR%20Apache--2.0-blue)
 
-| The example wireframe as tube | Its top node: brace and diagonal coped under the hoop |
+| A node: brace and diagonal coped under the hoop | The example wireframe as tube |
 |---|---|
-| ![Example frame](docs/images/example-frame.png) | ![Coped node](docs/images/example-node.png) |
+| ![Coped node](docs/images/example-node.png) | ![Example frame](docs/images/example-frame.png) |
 
 ## Install
 
