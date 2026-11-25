@@ -1,0 +1,200 @@
+{
+  "id": "tubecraft",
+  "name": "TubeCraft",
+  "version": "0.4.0",
+  "description": "Turns sketch lines and arcs into bent, coped and mitred round tube, for roll cages and tube frames. Each run makes one tube in its own size and copes it to the tubes already in the design, flush or square to the wall as a tube laser cuts.",
+  "capabilities": [
+    "commands@0.2"
+  ],
+  "$defs": {
+    "paths": {
+      "type": "array",
+      "title": "Tube path",
+      "minItems": 1,
+      "description": "The lines and arcs of one tube, joined end to end on tangent, in any order. The tube is coped to the tubes already in the design; an earlier tube that ends on it, where it runs through, is coped to it instead.",
+      "x-solidcraft-selection": {
+        "version": 1,
+        "accept": [
+          "sketch_curve"
+        ]
+      }
+    },
+    "size": {
+      "type": "string",
+      "title": "Tube size",
+      "default": "hrew-1.750x0.120",
+      "oneOf": [
+        {
+          "const": "hrew-1.250x0.065",
+          "title": "1.250 x 0.065 HREW"
+        },
+        {
+          "const": "hrew-1.250x0.095",
+          "title": "1.250 x 0.095 HREW"
+        },
+        {
+          "const": "hrew-1.250x0.120",
+          "title": "1.250 x 0.120 HREW"
+        },
+        {
+          "const": "hrew-1.500x0.065",
+          "title": "1.500 x 0.065 HREW"
+        },
+        {
+          "const": "hrew-1.500x0.095",
+          "title": "1.500 x 0.095 HREW"
+        },
+        {
+          "const": "hrew-1.500x0.120",
+          "title": "1.500 x 0.120 HREW"
+        },
+        {
+          "const": "hrew-1.750x0.065",
+          "title": "1.750 x 0.065 HREW"
+        },
+        {
+          "const": "hrew-1.750x0.095",
+          "title": "1.750 x 0.095 HREW"
+        },
+        {
+          "const": "hrew-1.750x0.120",
+          "title": "1.750 x 0.120 HREW"
+        },
+        {
+          "const": "hrew-2.000x0.065",
+          "title": "2.000 x 0.065 HREW"
+        },
+        {
+          "const": "hrew-2.000x0.095",
+          "title": "2.000 x 0.095 HREW"
+        },
+        {
+          "const": "hrew-2.000x0.120",
+          "title": "2.000 x 0.120 HREW"
+        }
+      ]
+    },
+    "sharp_joints": {
+      "type": "string",
+      "title": "Free corners",
+      "default": "miter",
+      "description": "Where this tube's end meets an earlier tube's end and no other tube is there. A miter needs both tubes the same OD; otherwise the corner is butted.",
+      "oneOf": [
+        {
+          "const": "miter",
+          "title": "Miter"
+        },
+        {
+          "const": "butt",
+          "title": "Butt (earlier tube runs on, later tube coped)"
+        }
+      ]
+    },
+    "cope": {
+      "type": "string",
+      "title": "Cope",
+      "default": "flush",
+      "description": "How a tube end is cut where it lands on another tube. Flush: cut by the other tube's outside, so the whole wall touches (a hole saw or notcher). Perpendicular: cut square to the tube's own wall, as a CNC tube laser cuts, and trimmed back until no part of the wall is inside the other tube. A perpendicular cope does not follow later changes of the sketch: make the tube again after moving its lines.",
+      "oneOf": [
+        {
+          "const": "flush",
+          "title": "Flush cope"
+        },
+        {
+          "const": "perpendicular",
+          "title": "Perpendicular cope (tube laser)"
+        }
+      ]
+    },
+    "gap_in": {
+      "type": "number",
+      "title": "Weld gap (in)",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 0.25,
+      "description": "Left between a coped tube and the tube it is coped to."
+    },
+    "clr_in": {
+      "type": "number",
+      "title": "Bender die CLR (in)",
+      "default": 5.5,
+      "exclusiveMinimum": 0,
+      "description": "Bends of another centreline radius are listed as warnings."
+    },
+    "name": {
+      "type": "string",
+      "title": "Body name",
+      "default": "Tube",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "The tube is named <name> NN, after the highest number already in the design. Not a name that starts with Cope or Miter: TubeCraft names its own cuts that way."
+    }
+  },
+  "runtime": {
+    "module": "tubecraft.wasm",
+    "commands": [
+      "sketch.inspect",
+      "document.inspect",
+      "timeline.inspect",
+      "solid.pipe",
+      "sketch.create",
+      "sketch.options",
+      "sketch.line3d",
+      "sketch.finish",
+      "timeline.group",
+      "surface.loft",
+      "solid.split_body",
+      "inspect.measure",
+      "solid.remove",
+      "browser.visibility"
+    ],
+    "entries": [
+      {
+        "name": "tube",
+        "effect": "edit",
+        "input_schema": {
+          "type": "object",
+          "title": "Tube",
+          "required": [
+            "paths",
+            "size"
+          ],
+          "properties": {
+            "paths": {
+              "$ref": "#/$defs/paths"
+            },
+            "size": {
+              "$ref": "#/$defs/size"
+            },
+            "sharp_joints": {
+              "$ref": "#/$defs/sharp_joints"
+            },
+            "cope": {
+              "$ref": "#/$defs/cope"
+            },
+            "gap_in": {
+              "$ref": "#/$defs/gap_in"
+            },
+            "clr_in": {
+              "$ref": "#/$defs/clr_in"
+            },
+            "name": {
+              "$ref": "#/$defs/name"
+            }
+          }
+        },
+        "slots": [
+          {
+            "kind": "ribbon",
+            "name": "Weldments"
+          }
+        ]
+      }
+    ],
+    "limits": {
+      "fuel": 20000000000,
+      "memory_mib": 64,
+      "deadline_ms": 30000
+    }
+  }
+}

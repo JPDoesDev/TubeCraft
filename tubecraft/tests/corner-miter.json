@@ -1,0 +1,35 @@
+{
+  "design": "corner-leg.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      }
+    ],
+    "size": "hrew-1.750x0.120",
+    "sharp_joints": "miter"
+  },
+  "expect": {
+    "model": {
+      "body_count": 2,
+      "total": {
+        "volume_mm3": 237868.8
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "name": "Tube 02",
+          "mitred_to": [
+            "Tube 01"
+          ],
+          "cut_length_in": 12.686
+        }
+      }
+    },
+    "tolerance": 1e-05
+  }
+}

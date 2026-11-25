@@ -1,0 +1,52 @@
+{
+  "design": "example.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "a1"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "a2"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l3"
+      }
+    ],
+    "size": "hrew-1.750x0.120",
+    "name": "Hoop"
+  },
+  "expect": {
+    "model": {
+      "body_count": 1,
+      "total": {
+        "volume_mm3": 1281668.8
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "name": "Hoop 01",
+          "coped_to": []
+        }
+      }
+    },
+    "tolerance": 1e-05
+  }
+}

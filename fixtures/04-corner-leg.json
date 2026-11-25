@@ -1,0 +1,14 @@
+{
+  "design": "corner.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      }
+    ],
+    "size": "hrew-1.750x0.120"
+  }
+}

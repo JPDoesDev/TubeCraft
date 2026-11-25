@@ -1,0 +1,15 @@
+{
+  "design": "example.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l8"
+      }
+    ],
+    "size": "hrew-1.500x0.120",
+    "name": "Brace"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "design": "ex-hoop.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l8"
+      }
+    ],
+    "size": "hrew-1.500x0.120",
+    "name": "Brace"
+  },
+  "expect": {
+    "model": {
+      "body_count": 2,
+      "total": {
+        "volume_mm3": 1576395.8
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "name": "Brace 01",
+          "coped_to": [
+            "Hoop 01"
+          ],
+          "centreline_in": 36.0,
+          "cut_length_in": 35.099
+        }
+      }
+    },
+    "tolerance": 1e-05
+  }
+}

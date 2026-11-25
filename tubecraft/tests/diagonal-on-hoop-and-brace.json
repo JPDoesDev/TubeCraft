@@ -1,0 +1,35 @@
+{
+  "design": "ex-hoop-brace.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l7"
+      }
+    ],
+    "size": "hrew-1.500x0.120",
+    "name": "Diagonal"
+  },
+  "expect": {
+    "model": {
+      "body_count": 3,
+      "total": {
+        "volume_mm3": 1921854.4
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "name": "Diagonal 01",
+          "coped_to": [
+            "Hoop 01",
+            "Brace 01"
+          ]
+        }
+      }
+    },
+    "tolerance": 1e-05
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "design": "corner-leg.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      }
+    ],
+    "size": "hrew-1.750x0.120",
+    "sharp_joints": "butt",
+    "gap_in": 0.03125,
+    "cope": "perpendicular"
+  },
+  "expect": {
+    "reply": {
+      "result": {
+        "tube": {
+          "coped_to": [
+            "Tube 01"
+          ]
+        }
+      }
+    },
+    "tolerance": 1e-05,
+    "model": {
+      "body_count": 2,
+      "total": {
+        "volume_mm3": 239406.4
+      }
+    }
+  }
+}

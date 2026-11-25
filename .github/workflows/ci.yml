@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      # The geometry, the planner and the command sequence, against a fake host.
+      - run: cargo test
+      # The component builds. The plugin cases (cargo xtask test) need solidcraft-cli and run locally.
+      - run: cargo xtask build

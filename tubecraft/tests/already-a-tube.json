@@ -1,0 +1,17 @@
+{
+  "design": "ex-hoop.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      }
+    ]
+  },
+  "expect": {
+    "error": "invalid_input",
+    "message": "already the path of Hoop 01"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "design": "cage-main-diag.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "w5"
+      }
+    ],
+    "size": "hrew-1.250x0.065"
+  },
+  "expect": {
+    "model": {
+      "body_count": 3,
+      "total": {
+        "volume_mm3": 464184.0
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "coped_to": [
+            "Main 01",
+            "Tube 01"
+          ]
+        }
+      }
+    },
+    "tolerance": 1e-05
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "design": "corner.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      }
+    ],
+    "name": "Cope"
+  },
+  "expect": {
+    "error": "invalid_input",
+    "message": "does not start with"
+  }
+}

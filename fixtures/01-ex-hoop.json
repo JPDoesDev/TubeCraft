@@ -1,0 +1,35 @@
+{
+  "design": "example.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "a1"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "a2"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l3"
+      }
+    ],
+    "size": "hrew-1.750x0.120",
+    "name": "Hoop"
+  }
+}

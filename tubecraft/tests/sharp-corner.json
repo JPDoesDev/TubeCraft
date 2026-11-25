@@ -1,0 +1,22 @@
+{
+  "design": "corner.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l1"
+      },
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      }
+    ]
+  },
+  "expect": {
+    "error": "invalid_input",
+    "message": "sharp corner"
+  }
+}

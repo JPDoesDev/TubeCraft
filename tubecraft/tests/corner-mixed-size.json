@@ -1,0 +1,37 @@
+{
+  "design": "corner-leg.sc",
+  "entry": "tube",
+  "params": {
+    "paths": [
+      {
+        "type": "external_sketch_curve",
+        "sketch": 1,
+        "id": "l2"
+      }
+    ],
+    "size": "hrew-1.500x0.065",
+    "sharp_joints": "miter"
+  },
+  "expect": {
+    "model": {
+      "body_count": 2,
+      "total": {
+        "volume_mm3": 179840.9
+      }
+    },
+    "reply": {
+      "result": {
+        "tube": {
+          "coped_to": [
+            "Tube 01"
+          ],
+          "mitred_to": []
+        },
+        "warnings": [
+          "Tube 02 and Tube 01 are not the same OD, so their corner is butted, not mitred"
+        ]
+      }
+    },
+    "tolerance": 1e-05
+  }
+}
